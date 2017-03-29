@@ -23,3 +23,22 @@ startActivityForResult(intent,1);
 
 4.将拍摄的照片显示出来
 Bitmap bitmap = BitmapFactory.decodeStram(getContentResolver().openInputStream(imageUri));
+
+5.菜单中声明
+ <provider
+            android:authorities="com.example.AutumnTime.fileprovider"
+            android:name="android.support.v4.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+  </provider>
+  
+ <meta-data/> 用来指定uri共享的路径
+ <?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <external-path name="my_images" path=""/>
+</paths>
+ external-path指定uri共享，name可以随便填，path指定共享的路径，不填表示将整个SD卡共享。也可以填图片的具体路径。
