@@ -26,14 +26,14 @@ Bitmap bitmap = BitmapFactory.decodeStram(getContentResolver().openInputStream(i
 
 5.菜单中声明
  <provider
-            android:authorities="com.example.AutumnTime.fileprovider"
-            android:name="android.support.v4.content.FileProvider"
-            android:exported="false"
-            android:grantUriPermissions="true">
+      android:authorities="com.example.AutumnTime.fileprovider"
+      android:name="android.support.v4.content.FileProvider"
+      android:exported="false"
+      android:grantUriPermissions="true">
 
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"/>
+         <meta-data
+            android:name="android.support.FILE_PROVIDER_PATHS"
+            android:resource="@xml/file_paths"/>
   </provider>
   
  <meta-data/> 用来指定uri共享的路径
